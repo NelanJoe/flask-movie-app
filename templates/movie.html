@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <!-- <link rel="stylesheet" href="../static/css/style.css" /> -->
+
+    <title>Movie Api</title>
+  </head>
+  <body>
+    
+    <h1>Movie Discover</h1>
+
+    {% block content %}
+    <div class="container">
+      {% for movie in movies %}
+      <div class="card">
+        <div class="card-img">
+          <img
+            src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}"
+            alt="img"
+          />
+        </div>
+        <h3 class="title">{{ movie.title }}</h3>
+        <p class="overview">{{ movie.overview }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endblock %}
+  </body>
+</html>
