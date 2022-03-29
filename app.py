@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 key = "acafdeae2e2064b3f9c66c78d0e38cf8"
 
-@app.route('/')
+@app.route('/home')
 
 def getMovie():
    url = f"https://api.themoviedb.org/3/discover/movie?api_key={key}&language=id"
